@@ -1,40 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# aiWeb3
 
-## Getting Started
+## Git clone
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+``` bash
+git clone <address> 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Install dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+``` bash
+npm install
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Run Doctor Script
+    
+``` bash
+    npm run doctor
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Mysql script for Database
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+``` sql
+CREATE TABLE transactions(                               
+  id INT NOT NULL AUTO_INCREMENT,
+  txnHash INT NOT NULL,
+  userID INT NOT NULL,
+  dateTime TIMESTAMP NOT NULL,
+  fromID VARCHAR(200) NOT NULL,
+  toID VARCHAR(200) NOT NULL,
+  price FLOAT NOT NULL,
+  tokenFee FLOAT NOT NULL,
+  PRIMARY KEY (id)
+);
+```
 
-## Learn More
+## Troubleshooting
 
-To learn more about Next.js, take a look at the following resources:
+## Solution
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 1. If you see the error: "Attention: Next.js now collects completely anonymous telemetry regarding usage. This information is used to shape Next.js' roadmap and prioritize features. You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting [https://nextjs.org/telemetry](https://nextjs.org/telemetry)." Type the following command to disable it:"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+``` bash
+npx next telemetry disable
+```
 
-## Deploy on Vercel
+### 2. Error: connect ECONNREFUSED 0.0.0.0:3306 at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1602:16)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+``` bash
+netstat -lntup | grep 3306
+```
