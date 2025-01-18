@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.6.10",
+    "@nextui-org/react": "^2.6.11",
     "@types/react": "18.2.52",
     "ethers": "^5.7.2",
-    "framer-motion": "^11.15.0",
+    "framer-motion": "^11.18.1",
     "next": "14.2.13",
     "node-upbit": "^1.2.0",
     "react": "^18",
@@ -22,9 +22,9 @@
     "web3modal": "^1.9.12"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.7",
     "@types/react": "^18",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.3"
   }
 }
